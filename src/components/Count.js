@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { INCREASE, DECREASE } from 'constants/count'
+import { increase, decrease } from 'actions'
 import Nav from 'components/Nav'
 
 const Count = ({ dispatch, count }) => {
@@ -8,8 +8,8 @@ const Count = ({ dispatch, count }) => {
     <React.Fragment>
       <Nav />
       <h1>Count {count}</h1>
-      <button onClick={() => dispatch(INCREASE)}>+</button>
-      <button onClick={() => dispatch(DECREASE)}>-</button>
+      <button onClick={() => dispatch(increase())}>+</button>
+      <button onClick={() => dispatch(decrease())}>-</button>
     </React.Fragment>
   )
 }
