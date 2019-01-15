@@ -10,6 +10,9 @@ const Home = () => (
       <li>
         <Link to="/count">Count</Link>
       </li>
+      <li>
+        <Link to="/github">User</Link>
+      </li>
     </ul>
   </nav>
 )
