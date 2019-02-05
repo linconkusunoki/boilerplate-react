@@ -1,9 +1,6 @@
 import { CALL_API } from 'middleware/api'
 import { API_ROOT } from 'config/api'
-
-export const FETCH_USER = 'FETCH_USER'
-export const FETCH_USER_SUCCESS = 'FETCH_USER_SUCCESS'
-export const FETCH_USER_FAILURE = 'FETCH_USER_FAILURE'
+import { FETCH_USER, FETCH_USER_SUCCESS, FETCH_USER_FAILURE } from './types'
 
 export const getUser = user => ({
   [CALL_API]: {

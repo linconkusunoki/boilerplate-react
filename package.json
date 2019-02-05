@@ -21,12 +21,6 @@
     "eject": "react-scripts eject",
     "precommit": "pretty-quick --staged"
   },
-  "jest": {
-    "testEnvironment": "node",
-    "setupFiles": [
-      "./src/config/tests.js"
-    ]
-  },
   "browserslist": [
     ">0.2%",
     "not dead",

@@ -1,4 +1,4 @@
-import { INCREASE, DECREASE } from 'actions'
+import { INCREASE, DECREASE } from 'actions/types'
 
 export default (state = 1, action) => {
   switch (action.type) {
