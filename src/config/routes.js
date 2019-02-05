@@ -1,9 +1,9 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
-import ErrorBoundary from './ErrorBoundary'
+import ErrorBoundary from '../containers/ErrorBoundary'
 import Home from 'components/Home'
-import Count from 'components/Count'
-import User from 'containers/User'
+import Count from 'containers/CountContainer'
+import User from 'containers/UserContainer'
 
 const Routes = () => (
   <ErrorBoundary>

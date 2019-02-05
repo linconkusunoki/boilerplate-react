@@ -1,3 +1,8 @@
+/**
+ * @Optional
+ * You can delete this file if you want
+ */
+
 import axios from 'axios'
 import { BASE_URL, REQUEST_TIMEOUT } from './api'
 

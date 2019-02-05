@@ -1,6 +1,10 @@
 import { FETCH_USER, FETCH_USER_SUCCESS, FETCH_USER_FAILURE } from '../actions'
 
-const INITIAL_STATE = {}
+const INITIAL_STATE = {
+  data: {},
+  error: null,
+  loading: false,
+}
 
 export default function(state = INITIAL_STATE, action) {
   let error
