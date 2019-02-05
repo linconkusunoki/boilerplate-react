@@ -1,4 +1,8 @@
-import { FETCH_USER, FETCH_USER_SUCCESS, FETCH_USER_FAILURE } from '../actions'
+import {
+  FETCH_USER,
+  FETCH_USER_SUCCESS,
+  FETCH_USER_FAILURE,
+} from 'actions/types'
 
 const INITIAL_STATE = {
   data: {},
