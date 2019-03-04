@@ -10,9 +10,13 @@ class UserContainer extends Component {
   }
 
   renderUser = () => {
-    const { loading, data } = this.props.user
+    const { loading, error, data } = this.props.user
     if (loading) {
       return <p>Loading...</p>
+    }
+
+    if (error) {
+      return <p>{error}</p>
     }
 
     return <User {...data} />

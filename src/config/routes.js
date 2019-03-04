@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
 import ErrorBoundary from '../containers/ErrorBoundary'
-import Home from 'components/Home'
+import Home from 'containers/HomeContainer'
 import Count from 'containers/CountContainer'
 import User from 'containers/UserContainer'
 
