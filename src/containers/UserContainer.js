@@ -1,43 +1,40 @@
-import React, { Component } from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import { getUser } from 'actions'
+import { getUsers } from 'actions'
 import Nav from 'components/Nav'
 import User from 'components/User'
 
-class UserContainer extends Component {
-  componentDidMount() {
-    this.props.getUser('linconkusunoki')
-  }
+const UserContainer = ({ user, getUsers }) => {
+  useEffect(() => {
+    getUsers()
+  }, [])
 
-  renderUser = () => {
-    const { loading, error, data } = this.props.user
-    if (loading) {
-      return <p>Loading...</p>
-    }
-
-    if (error) {
-      return <p>{error}</p>
-    }
-
-    return <User {...data} />
-  }
-
-  render() {
-    return (
-      <React.Fragment>
-        <Nav />
-        <h1>Github</h1>
-        {this.renderUser()}
-      </React.Fragment>
-    )
-  }
+  return (
+    <React.Fragment>
+      <Nav />
+      <h1>Users</h1>
+      {renderUser(user)}
+    </React.Fragment>
+  )
 }
 
-const mapStateToProps = state => ({
-  user: state.user,
-})
+export const renderUser = ({ loading, error, data }) => {
+  if (loading) {
+    return <p>Loading...</p>
+  }
+
+  if (error) {
+    return <p>{error}</p>
+  }
+
+  if (!data) return null
+
+  return <User {...data} />
+}
+
+const mapStateToProps = ({ user }) => ({ user })
 
 export default connect(
   mapStateToProps,
-  { getUser },
+  { getUsers },
 )(UserContainer)

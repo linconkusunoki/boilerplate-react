@@ -1,25 +1,25 @@
 import {
-  FETCH_USER,
-  FETCH_USER_SUCCESS,
-  FETCH_USER_FAILURE,
+  FETCH_USERS,
+  FETCH_USERS_SUCCESS,
+  FETCH_USERS_FAILURE,
 } from 'actions/types'
 
 const INITIAL_STATE = {
-  data: {},
+  data: null,
   error: null,
   loading: false,
 }
 
 export default function(state = INITIAL_STATE, action) {
   switch (action.type) {
-    case FETCH_USER:
+    case FETCH_USERS:
       return {
         ...state,
         error: null,
         loading: true,
       }
 
-    case FETCH_USER_SUCCESS:
+    case FETCH_USERS_SUCCESS:
       return {
         ...state,
         data: action.payload,
@@ -27,7 +27,7 @@ export default function(state = INITIAL_STATE, action) {
         loading: false,
       }
 
-    case FETCH_USER_FAILURE:
+    case FETCH_USERS_FAILURE:
       return {
         ...state,
         error: action.error,

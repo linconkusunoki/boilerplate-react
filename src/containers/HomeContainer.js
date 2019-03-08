@@ -1,19 +1,20 @@
 import React from 'react'
+import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
+import { signIn } from 'actions'
 import Home from 'components/Home'
-import { formValueSelector } from 'redux-form'
 
-let HomeContainer = props => {
-  return <Home {...props} />
+const HomeContainer = ({ signIn, isAuthenticated }) => {
+  if (isAuthenticated) {
+    return <Redirect to="/users" />
+  }
+
+  return <Home signIn={signIn} />
 }
 
-const selector = formValueSelector('login')
-HomeContainer = connect(state => {
-  const { email, password } = selector(state, 'email', 'password')
-  return {
-    email,
-    password,
-  }
-})(HomeContainer)
+const mapStateToProps = ({ auth: { isAuthenticated } }) => ({ isAuthenticated })
 
-export default HomeContainer
+export default connect(
+  mapStateToProps,
+  { signIn },
+)(HomeContainer)

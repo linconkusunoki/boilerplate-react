@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import SignOutButton from 'components/SignOutButton'
 
 const Home = () => (
   <nav>
@@ -11,8 +12,9 @@ const Home = () => (
         <Link to="/count">Count</Link>
       </li>
       <li>
-        <Link to="/github">User</Link>
+        <Link to="/users">Users</Link>
       </li>
+      <SignOutButton />
     </ul>
   </nav>
 )

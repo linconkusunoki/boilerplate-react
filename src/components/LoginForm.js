@@ -1,8 +1,7 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
 
-const LoginForm = props => {
-  const { handleSubmit, pristine, submitting } = props
+const LoginForm = ({ handleSubmit, pristine, submitting }) => {
   return (
     <form onSubmit={handleSubmit}>
       <div>

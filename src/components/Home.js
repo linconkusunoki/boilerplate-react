@@ -2,19 +2,15 @@ import React from 'react'
 import Nav from 'components/Nav'
 import LoginForm from 'components/LoginForm'
 
-const Home = ({ email, password }) => (
+const Home = ({ signIn }) => (
   <React.Fragment>
     <Nav />
     <h1>Home</h1>
     <pre>
-      {`
-        {
-          email: ${email},
-          password: ${password}
-        }
-      `}
+      email: peter@klaven <br />
+      password: cityslicka
     </pre>
-    <LoginForm />
+    <LoginForm onSubmit={signIn} />
   </React.Fragment>
 )
 

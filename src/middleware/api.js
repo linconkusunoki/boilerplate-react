@@ -1,11 +1,11 @@
 import { camelizeKeys } from 'humps'
 import { API_ROOT } from 'config/api'
 
-const callApi = endpoint => {
+const callApi = (endpoint, config) => {
   const fullUrl =
     endpoint.indexOf(API_ROOT) === -1 ? API_ROOT + endpoint : endpoint
 
-  return fetch(fullUrl).then(response =>
+  return fetch(fullUrl, config).then(response =>
     response.json().then(json => {
       if (!response.ok) {
         return Promise.reject(json)
@@ -27,7 +27,7 @@ export default store => next => action => {
     return next(action)
   }
 
-  let { endpoint } = callAPI
+  let { endpoint, config } = callAPI
   const { types } = callAPI
 
   if (typeof endpoint === 'function') {
@@ -55,7 +55,7 @@ export default store => next => action => {
   const [requestType, successType, failureType] = types
   next(actionWith({ type: requestType }))
 
-  return callApi(endpoint).then(
+  return callApi(endpoint, config).then(
     payload =>
       next(
         actionWith({
