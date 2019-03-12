@@ -1,5 +1,4 @@
-import { Count } from '../Count'
-import Nav from 'components/Nav'
+import Count from './'
 
 describe('Count Component', () => {
   let wrapper, total, increase, decrease
@@ -15,10 +14,6 @@ describe('Count Component', () => {
     expect(wrapper).toMatchSnapshot()
   })
 
-  it('should render the Nav Component', () => {
-    expect(wrapper.find(Nav)).toBeTruthy()
-  })
-
   it('should invoke increase when click in the button', () => {
     const increaseButton = wrapper.find('#increase')
     increaseButton.simulate('click')
@@ -29,5 +24,10 @@ describe('Count Component', () => {
     const decreaseButton = wrapper.find('#decrease')
     decreaseButton.simulate('click')
     expect(decrease).toHaveBeenCalled()
+  })
+
+  it('should render the total from props', () => {
+    wrapper.setProps({ total: 2 })
+    expect(wrapper.find('h1').props().children[1]).toEqual(2)
   })
 })
