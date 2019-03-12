@@ -4,13 +4,13 @@ import {
   FETCH_USERS_FAILURE,
 } from 'actions/types'
 
-const INITIAL_STATE = {
+const initialState = {
   data: null,
   error: null,
   loading: false,
 }
 
-export default function(state = INITIAL_STATE, action) {
+export default function(state = initialState, action) {
   switch (action.type) {
     case FETCH_USERS:
       return {

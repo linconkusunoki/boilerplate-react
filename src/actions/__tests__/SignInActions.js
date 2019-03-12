@@ -1,12 +1,16 @@
 /* eslint no-undef: 0 */
 import configureMockStore from 'redux-mock-store'
 import CALL_API from 'middleware/api'
-import { getUsers } from 'actions/UserActions'
-import { FETCH_USERS_SUCCESS, FETCH_USERS_FAILURE } from 'actions/types'
+import { signIn, signOut } from 'actions/SignInActions'
+import { SIGN_IN_FAILURE, SIGN_IN_SUCCESS, SIGN_OUT } from 'actions/types'
 import nock from 'nock'
 
 const middlewares = [CALL_API]
 const mockStore = configureMockStore(middlewares)
+const credentials = {
+  email: 'john@doe.com',
+  passowrd: '123test',
+}
 
 describe('async actions', () => {
   let store
@@ -19,26 +23,30 @@ describe('async actions', () => {
     nock.cleanAll()
   })
 
-  it('should fetch the users with success', async done => {
+  it('should login with success', async done => {
     const expectedResponse = { success: true }
     nock(baseUrl)
       .defaultReplyHeaders(headers)
-      .get('/users')
+      .post('/login')
       .reply(200, expectedResponse)
-    const response = await store.dispatch(getUsers())
-    expect(response.type).toEqual(FETCH_USERS_SUCCESS)
+    const response = await store.dispatch(signIn(credentials))
+    expect(response.type).toEqual(SIGN_IN_SUCCESS)
     expect(response.payload).toEqual(expectedResponse)
     done()
   })
 
-  it('should fetch the users and get an error', async done => {
+  it('should login and get an error', async done => {
     nock(baseUrl)
       .defaultReplyHeaders(headers)
-      .get('/users')
+      .post('/login')
       .reply(401, {})
-    const response = await store.dispatch(getUsers())
-    expect(response.type).toEqual(FETCH_USERS_FAILURE)
+    const response = await store.dispatch(signIn(credentials))
+    expect(response.type).toEqual(SIGN_IN_FAILURE)
     expect(response.error).toEqual('Something bad happened')
     done()
+  })
+
+  it('should sign out the user', () => {
+    expect(signOut()).toEqual({ type: SIGN_OUT })
   })
 })
