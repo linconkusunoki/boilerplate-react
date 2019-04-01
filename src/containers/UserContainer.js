@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { getUsers } from 'actions'
 import Nav from 'components/Nav'
 import User from 'components/User'
+import PushButton from 'components/PushButton'
 
 const UserContainer = ({ user, getUsers }) => {
   useEffect(() => {
@@ -11,6 +12,7 @@ const UserContainer = ({ user, getUsers }) => {
 
   return (
     <React.Fragment>
+      <PushButton />
       <Nav />
       <h1>Users</h1>
       {renderUser(user)}

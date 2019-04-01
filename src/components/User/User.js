@@ -1,9 +1,9 @@
 import React from 'react'
 
 const renderUsers = userList => {
-  return userList.map(({ avatar, firstName, lastName }) => {
+  return userList.map(({ avatar, firstName, lastName }, index) => {
     return (
-      <li>
+      <li key={index}>
         <img src={avatar} alt={firstName} />
         <p>
           {firstName} {lastName}
