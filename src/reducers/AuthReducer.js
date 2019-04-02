@@ -1,4 +1,4 @@
-import { SIGN_IN_SUCCESS, SIGN_IN_FAILURE, SIGN_OUT } from 'actions/types'
+import { SIGN_IN_SUCCESS, SIGN_IN_FAILURE, SIGN_OUT } from '../constants'
 
 const initialState = {
   isAuthenticated: false,

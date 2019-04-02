@@ -2,7 +2,7 @@ import {
   FETCH_USERS,
   FETCH_USERS_SUCCESS,
   FETCH_USERS_FAILURE,
-} from 'actions/types'
+} from '../constants'
 
 const initialState = {
   data: null,

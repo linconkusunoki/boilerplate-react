@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Root from 'utils/Root'
+import Root from './utils/Root'
 import configureStore from './store/configureStore'
-import * as serviceWorker from 'config/serviceWorker'
+import * as serviceWorker from './config/serviceWorker'
 import initWorkboxRefresh from '@loopmode/cra-workbox-refresh'
 
 const store = configureStore()

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import SignOutButton from 'components/SignOutButton'
+import SignOutButton from '../SignOutButton'
 
 const Home = () => (
   <nav>

@@ -1,6 +1,10 @@
-import { CALL_API } from 'middleware/api'
-import { API_ROOT } from 'config/api'
-import { FETCH_USERS, FETCH_USERS_SUCCESS, FETCH_USERS_FAILURE } from './types'
+import { CALL_API } from '../middleware/api'
+import { API_ROOT } from '../config/api'
+import {
+  FETCH_USERS,
+  FETCH_USERS_SUCCESS,
+  FETCH_USERS_FAILURE,
+} from '../constants'
 
 export const getUsers = () => ({
   [CALL_API]: {

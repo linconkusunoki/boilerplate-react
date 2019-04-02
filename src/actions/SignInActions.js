@@ -3,9 +3,9 @@ import {
   SIGN_IN_SUCCESS,
   SIGN_IN_FAILURE,
   SIGN_OUT,
-} from 'actions/types'
-import { CALL_API } from 'middleware/api'
-import { API_ROOT } from 'config/api'
+} from '../constants'
+import { CALL_API } from '../middleware/api'
+import { API_ROOT } from '../config/api'
 
 export const signIn = ({ email, password }) => ({
   [CALL_API]: {

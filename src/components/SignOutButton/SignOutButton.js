@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { signOut } from 'actions'
+import { signOut } from '../../actions'
 
 const SignOutButton = ({ isAuthenticated, signOut }) => {
   if (!isAuthenticated) return null

@@ -1,6 +1,6 @@
 import React from 'react'
-import Nav from 'components/Nav'
-import LoginForm from 'components/LoginForm'
+import Nav from '../Nav'
+import LoginForm from '../LoginForm'
 
 const Home = ({ signIn }) => (
   <React.Fragment>
