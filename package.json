@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@loopmode/cra-workbox-refresh": "0.0.5",
     "humps": "^2.0.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.3",
@@ -21,12 +22,7 @@
     "eject": "react-scripts eject",
     "precommit": "pretty-quick --staged"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
+  "browserslist": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"],
   "devDependencies": {
     "@loopmode/cra-workbox-refresh": "^0.0.5",
     "enzyme": "^3.9.0",
