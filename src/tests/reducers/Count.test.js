@@ -1,5 +1,4 @@
-import reducer from '../CountReducer'
-import { INCREASE, DECREASE } from 'actions/types'
+import reducer, { Types } from '../../store/ducks/count'
 
 describe('Count reducer', () => {
   it('should return the initial state', () => {
@@ -7,10 +6,10 @@ describe('Count reducer', () => {
   })
 
   it('should handle INCREASE', () => {
-    expect(reducer(1, { type: INCREASE })).toEqual(2)
+    expect(reducer(1, { type: Types.INCREASE })).toEqual(2)
   })
 
   it('should handle DECREASE', () => {
-    expect(reducer(1, { type: DECREASE })).toEqual(0)
+    expect(reducer(1, { type: Types.DECREASE })).toEqual(0)
   })
 })

@@ -1,4 +1,4 @@
-import reducers from '../'
+import reducers from '../../store/reducers'
 
 describe('reducers', () => {
   const initialState = {

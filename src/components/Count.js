@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Nav from '../Nav'
+import Nav from './Nav'
 
 export const Count = ({ total, increase, decrease }) => {
   return (

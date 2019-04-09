@@ -1,7 +1,7 @@
 import React from 'react'
 import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { signIn } from '../actions'
+import { signIn } from '../store/ducks/signin'
 import Home from '../components/Home'
 
 const HomeContainer = ({ signIn, isAuthenticated }) => {
