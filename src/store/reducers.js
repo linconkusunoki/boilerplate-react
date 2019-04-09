@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
 import { reducer as form } from 'redux-form'
-import count from './CountReducer'
-import user from './UserReducer'
-import auth from './AuthReducer'
+import count from './ducks/count'
+import user from './ducks/user'
+import auth from './ducks/signin'
 
 export default combineReducers({
   auth,

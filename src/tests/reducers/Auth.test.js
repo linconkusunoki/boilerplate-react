@@ -1,5 +1,4 @@
-import reducer from '../AuthReducer'
-import { SIGN_IN_SUCCESS, SIGN_IN_FAILURE, SIGN_OUT } from 'actions/types'
+import reducer, { Types } from '../../store/ducks/signin'
 
 describe('Auth reducer', () => {
   const initialState = {
@@ -12,11 +11,11 @@ describe('Auth reducer', () => {
   })
 
   it('should handle SIGN_IN_FAILURE', () => {
-    expect(reducer({}, { type: SIGN_IN_FAILURE })).toEqual(initialState)
+    expect(reducer({}, { type: Types.SIGN_IN_FAILURE })).toEqual(initialState)
   })
 
   it('should handle SIGN_OUT', () => {
-    expect(reducer({}, { type: SIGN_OUT })).toEqual(initialState)
+    expect(reducer({}, { type: Types.SIGN_OUT })).toEqual(initialState)
   })
 
   it('should handle SIGN_IN_SUCCESS', () => {
@@ -24,7 +23,7 @@ describe('Auth reducer', () => {
       reducer(
         {},
         {
-          type: SIGN_IN_SUCCESS,
+          type: Types.SIGN_IN_SUCCESS,
           payload: { token: '123abc' },
         },
       ),

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import { getUsers } from '../actions'
+import { getUsers } from '../store/ducks/user'
 import Nav from '../components/Nav'
 import User from '../components/User'
 

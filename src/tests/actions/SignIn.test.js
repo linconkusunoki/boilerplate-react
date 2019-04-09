@@ -1,9 +1,8 @@
 /* eslint no-undef: 0 */
 import configureMockStore from 'redux-mock-store'
-import CALL_API from 'middleware/api'
-import { signIn, signOut } from 'actions/SignInActions'
-import { SIGN_IN_FAILURE, SIGN_IN_SUCCESS, SIGN_OUT } from 'actions/types'
 import nock from 'nock'
+import CALL_API from '../../middleware/api'
+import { Types, signIn, signOut } from '../../store/ducks/signin'
 
 const middlewares = [CALL_API]
 const mockStore = configureMockStore(middlewares)
@@ -30,7 +29,7 @@ describe('async actions', () => {
       .post('/login')
       .reply(200, expectedResponse)
     const response = await store.dispatch(signIn(credentials))
-    expect(response.type).toEqual(SIGN_IN_SUCCESS)
+    expect(response.type).toEqual(Types.SIGN_IN_SUCCESS)
     expect(response.payload).toEqual(expectedResponse)
     done()
   })
@@ -41,12 +40,12 @@ describe('async actions', () => {
       .post('/login')
       .reply(401, {})
     const response = await store.dispatch(signIn(credentials))
-    expect(response.type).toEqual(SIGN_IN_FAILURE)
+    expect(response.type).toEqual(Types.SIGN_IN_FAILURE)
     expect(response.error).toEqual('Something bad happened')
     done()
   })
 
   it('should sign out the user', () => {
-    expect(signOut()).toEqual({ type: SIGN_OUT })
+    expect(signOut()).toEqual({ type: Types.SIGN_OUT })
   })
 })

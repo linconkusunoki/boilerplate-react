@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { increase, decrease } from '../actions'
+import { increase, decrease } from '../store/ducks/count'
 import Count from '../components/Count'
 
 const CountContainer = props => <Count {...props} />

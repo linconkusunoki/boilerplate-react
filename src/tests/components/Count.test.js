@@ -1,4 +1,4 @@
-import Count from './'
+import Count from '../../components/Count'
 
 describe('Count Component', () => {
   let wrapper, total, increase, decrease
