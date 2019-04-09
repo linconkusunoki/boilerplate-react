@@ -1,14 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { increase, decrease } from 'actions'
-import Count from 'components/Count'
+import { increase, decrease } from '../store/ducks/count'
+import Count from '../components/Count'
 
-const CountContainer = ({ count, increase, decrease }) => {
-  return <Count increase={increase} decrease={decrease} total={count} />
-}
+const CountContainer = props => <Count {...props} />
 
 const mapStateToProps = state => ({
-  count: state.count,
+  total: state.count,
 })
 
 export default connect(

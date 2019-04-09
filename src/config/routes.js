@@ -1,10 +1,10 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
-import ErrorBoundary from 'containers/ErrorBoundary'
-import PrivateRoute from 'containers/PrivateRoute'
-import Home from 'containers/HomeContainer'
-import Count from 'containers/CountContainer'
-import User from 'containers/UserContainer'
+import ErrorBoundary from '../utils/ErrorBoundary'
+import PrivateRoute from '../utils/PrivateRoute'
+import Home from '../containers/HomeContainer'
+import Count from '../containers/CountContainer'
+import User from '../containers/UserContainer'
 
 const Routes = () => (
   <ErrorBoundary>

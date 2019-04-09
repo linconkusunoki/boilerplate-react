@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import { getUsers } from 'actions'
-import Nav from 'components/Nav'
-import User from 'components/User'
+import { getUsers } from '../store/ducks/user'
+import Nav from '../components/Nav'
+import User from '../components/User'
 
 const UserContainer = ({ user, getUsers }) => {
   useEffect(() => {

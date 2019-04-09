@@ -1,5 +1,5 @@
 import { camelizeKeys } from 'humps'
-import { API_ROOT } from 'config/api'
+import { API_ROOT } from '../config/api'
 
 const callApi = (endpoint, config) => {
   const fullUrl =

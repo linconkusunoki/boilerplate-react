@@ -8,3 +8,5 @@ global.React = React
 global.shallow = shallow
 global.render = render
 global.mount = mount
+global.baseUrl = 'https://reqres.in/api'
+global.headers = { 'access-control-allow-origin': '*' }

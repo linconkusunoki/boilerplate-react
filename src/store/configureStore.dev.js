@@ -1,14 +1,15 @@
 import { createStore, applyMiddleware } from 'redux'
 import { createLogger } from 'redux-logger'
+import { composeWithDevTools } from 'redux-devtools-extension'
+import api from '../middleware/api'
 import rootReducer from '../reducers'
-import api from 'middleware/api'
-import { loadState, saveState } from './persistState'
+import { loadState, saveState } from '../utils/persistState'
 
 const configureStore = () => {
   let store = createStore(
     rootReducer,
     loadState(),
-    applyMiddleware(api, createLogger()),
+    composeWithDevTools(applyMiddleware(api, createLogger())),
   )
 
   store.subscribe(() => saveState(store.getState()))
