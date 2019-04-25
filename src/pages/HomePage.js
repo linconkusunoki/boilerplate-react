@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { signIn } from '../store/ducks/signin'
 import Home from '../components/Home'
 
-const HomeContainer = ({ signIn, isAuthenticated }) => {
+const HomePage = ({ signIn, isAuthenticated }) => {
   if (isAuthenticated) {
     return <Redirect to="/users" />
   }
@@ -17,4 +17,4 @@ const mapStateToProps = ({ auth: { isAuthenticated } }) => ({ isAuthenticated })
 export default connect(
   mapStateToProps,
   { signIn },
-)(HomeContainer)
+)(HomePage)

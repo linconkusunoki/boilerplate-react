@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { increase, decrease } from '../store/ducks/count'
 import Count from '../components/Count'
 
-const CountContainer = props => <Count {...props} />
+const CountPage = props => <Count {...props} />
 
 const mapStateToProps = state => ({
   total: state.count,
@@ -12,4 +12,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   { increase, decrease },
-)(CountContainer)
+)(CountPage)
