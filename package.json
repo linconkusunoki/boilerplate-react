@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@loopmode/cra-workbox-refresh": "^0.0.5",
+    "fetch-mock": "^7.3.3",
     "humps": "^2.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

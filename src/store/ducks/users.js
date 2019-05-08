@@ -101,7 +101,6 @@ export const updateUser = ({ id, ...body }, history) => async dispatch => {
     },
   })
 
-  console.log(response)
-
   history.push(`/user/${id}`)
+  return response
 }

@@ -1,10 +1,12 @@
 /* eslint no-undef: 0 */
 import configureMockStore from 'redux-mock-store'
+import thunk from 'redux-thunk'
 import nock from 'nock'
+import fetchMock from 'fetch-mock'
 import CALL_API from '../../middleware/api'
-import { Types, getUsers } from '../../store/ducks/user'
+import { Types, getUsers, updateUser } from '../../store/ducks/users'
 
-const middlewares = [CALL_API]
+const middlewares = [CALL_API, thunk]
 const mockStore = configureMockStore(middlewares)
 
 describe('async actions', () => {
@@ -16,6 +18,7 @@ describe('async actions', () => {
 
   afterEach(() => {
     nock.cleanAll()
+    fetchMock.reset()
   })
 
   it('should fetch the users with success', async done => {
@@ -38,6 +41,14 @@ describe('async actions', () => {
     const response = await store.dispatch(getUsers())
     expect(response.type).toEqual(Types.FETCH_USERS_FAILURE)
     expect(response.error).toEqual('Something bad happened')
+    done()
+  })
+
+  it('should update the users', async done => {
+    const history = { push: jest.fn() }
+    fetchMock.mock('https://reqres.in/api/users/1', { success: true })
+    const response = await store.dispatch(updateUser({ id: 1 }, history))
+    expect(response.type).toEqual(Types.UPDATE_USER_SUCCESS)
     done()
   })
 })
