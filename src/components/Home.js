@@ -7,7 +7,7 @@ const Home = ({ signIn }) => (
     <Nav />
     <h1>Home</h1>
     <pre>
-      email: peter@klaven <br />
+      email: eve.holt@reqres.in <br />
       password: cityslicka
     </pre>
     <LoginForm onSubmit={signIn} />
