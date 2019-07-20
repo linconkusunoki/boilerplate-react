@@ -1,10 +1,6 @@
 import styled from 'styled-components'
 
-export const Wrapper = styled.div`
-  background: #282a36;
-  height: 100vh;
-  padding-left: 250px;
-`
+export const Wrapper = styled.div``
 
 export const Title = styled.h1`
   color: #f8f8f2;

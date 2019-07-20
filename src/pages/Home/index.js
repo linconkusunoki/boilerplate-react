@@ -5,8 +5,7 @@ import * as Layout from '../../layouts'
 const Home = () => {
   return (
     <S.Wrapper>
-      <Layout.Sidebar />
-      <Layout.TopBar />
+      <Layout.TopBar>das</Layout.TopBar>
     </S.Wrapper>
   )
 }

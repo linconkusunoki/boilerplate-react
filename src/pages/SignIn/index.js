@@ -6,7 +6,7 @@ import { login } from '../../services/auth'
 
 const Home = ({ history }) => {
   const [loading, setLoading] = React.useState(false)
-  const [error, setError] = React.useState(true)
+  const [error, setError] = React.useState(false)
 
   const handleSubmit = async data => {
     setLoading(true)
@@ -41,7 +41,7 @@ const Home = ({ history }) => {
         </S.ButtonWrapper>
         <S.Divider />
         <S.Text>
-          Don't have an account?{' '}
+          Doesn't have an account?{' '}
           <S.Link to={routes.auth.signup}>Create an account</S.Link>
         </S.Text>
       </S.Form>

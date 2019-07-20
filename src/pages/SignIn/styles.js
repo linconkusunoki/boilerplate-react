@@ -3,7 +3,6 @@ import { Form as UnForm, Input as UnInput } from '@rocketseat/unform'
 import { Link as RouterLink } from 'react-router-dom'
 
 export const Wrapper = styled.div`
-  background: #282a36;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -11,17 +10,14 @@ export const Wrapper = styled.div`
 `
 
 export const Form = styled(UnForm)`
-  background: #191a21;
-  border: 2px solid #191a21;
-  box-shadow: 0 2px 4px 0 #333;
+  background: #282a36;
   padding: 30px;
   width: 420px;
 `
 
 export const Input = styled(UnInput)`
-  background: #282a36;
-  border: 2px solid #282a36;
-  box-sizing: border-box;
+  background: #191a21;
+  border: 2px solid #191a21;
   color: #f8f8f2;
   display: block;
   font-size: 14px;
