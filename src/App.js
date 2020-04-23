@@ -1,24 +1,14 @@
 import React from 'react'
-import { BrowserRouter as Router } from 'react-router-dom'
-import Routes from './Routes'
-import { Normalize } from 'styled-normalize'
-import { createGlobalStyle } from 'styled-components'
 
-const GlobalStyle = createGlobalStyle`
-  *, *::after, *::before {
-    box-sizing: border-box;
-    font-family: 'Source Sans Pro', sans-serif;
-  }
+import { AuthProvider } from './contexts/auth.context'
+import Router from './pages/router'
 
-  body {
-    background: #191a21;
-  }
-`
+function App() {
+  return (
+    <AuthProvider>
+      <Router />
+    </AuthProvider>
+  )
+}
 
-export default () => (
-  <Router>
-    <Normalize />
-    <GlobalStyle />
-    <Routes />
-  </Router>
-)
+export default App
