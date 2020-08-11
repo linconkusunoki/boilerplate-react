@@ -6,6 +6,8 @@ type ContextProps = {
 
   status: string | null
   setStatus: (value: string | null) => void
+
+  logout: () => void
 }
 
 type Props = { children: ReactNode }
@@ -23,8 +25,16 @@ export function AuthProvider({ children }: Props) {
     }
   }, [setToken])
 
+  function logout() {
+    localStorage.removeItem('token')
+    setStatus(null)
+    setToken(null)
+  }
+
   return (
-    <AuthContext.Provider value={{ token, setToken, status, setStatus }}>
+    <AuthContext.Provider
+      value={{ token, setToken, status, setStatus, logout }}
+    >
       {children}
     </AuthContext.Provider>
   )

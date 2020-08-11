@@ -59,6 +59,8 @@ export default function Login() {
           {errors.password && <p>{errors.password}</p>}
         </div>
         <br />
+
+        {auth.status === 'error' && <p>Email or Password invalid</p>}
         <button type="submit" disabled={pending}>
           Login
         </button>

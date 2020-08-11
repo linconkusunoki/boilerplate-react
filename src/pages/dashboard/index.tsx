@@ -8,9 +8,7 @@ export default function DashboardPage() {
   const { users, isLoading, isError } = useUsers()
 
   function handleClick() {
-    localStorage.removeItem('token')
-    auth.setToken(null)
-    auth.setStatus(null)
+    auth.logout()
   }
 
   if (isError) return <div>failed to load</div>
