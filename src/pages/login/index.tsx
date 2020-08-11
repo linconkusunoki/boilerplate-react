@@ -25,6 +25,7 @@ export default function Login() {
 
         localStorage.setItem('token', data.token)
         auth.setToken(data.token)
+        auth.setStatus(null)
       })
       .catch(() => {
         auth.setStatus('error')
